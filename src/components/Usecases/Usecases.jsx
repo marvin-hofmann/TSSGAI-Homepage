@@ -1,12 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import { data } from './../../utils/data';
-import * as THREE from 'three';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-import RotatingGroup from '../RotatingGroup/RotatingGroup';
+import React from 'react';
 
 import Mic from "./../../assets/icons/mic.svg";
 import Orion from './../../assets/img/orion.png';
@@ -14,87 +6,8 @@ import Speakpeak from './../../assets/img/speakpeak.png';
 import Dentascan from './../../assets/img/dentascan.png';
 import "./Usecases.css";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const biologyPaths = data.biology[0].paths;
-const biologyCurves = [];
-biologyPaths.forEach((path) => {
-  const points = [];
-  for (let i = 0; i < path.length; i += 3) {
-    points.push(new THREE.Vector3(path[i], path[i + 1], path[i + 2]));
-  }
-  biologyCurves.push(new THREE.CatmullRomCurve3(points));
-});
-
 function Usecases() {
-  const plusRef = useRef(null);
-  const minusRef = useRef(null);
-  const micRef = useRef(null);
-  const emailRef = useRef(null);
-  const sendRef = useRef(null);
-
-  useEffect(() => {
-    gsap.fromTo(plusRef.current, 
-      { x: '0%'}, 
-      { 
-        x: '20%',
-        scrollTrigger: {
-          trigger: '#icon-wrapper',
-          start: 'top bottom',
-          scrub: true
-        }
-      }
-    );
-
-    gsap.fromTo(sendRef.current, 
-      { x: '-200px'}, 
-      { 
-        x: '0%',
-        scrollTrigger: {
-          trigger: '#mariana',
-          start: 'top bottom',
-          scrub: true
-        }
-      }
-    );
-
-    gsap.fromTo(emailRef.current, 
-      { x: '-30%'}, 
-      { 
-        x: '0%',
-        scrollTrigger: {
-          trigger: '#emailMaven',
-          start: 'top bottom',
-          scrub: true
-        }
-      }
-    );
-
-    gsap.fromTo(minusRef.current, 
-      { x: '30%'},
-      { 
-        x: '0%',
-        scrollTrigger: {
-          trigger: '#icon-wrapper',
-          start: 'top bottom',
-          scrub: true
-        }
-      }
-    );
-
-    gsap.fromTo(micRef.current, 
-      { x: '-30%'}, 
-      { 
-        x: '0',
-        scrollTrigger: {
-          trigger: '.use-case:has(#orion)',
-          start: 'top bottom',
-          scrub: true
-        }
-      }
-    );
-  }, []);
-
+  
   return (
     <>
       <div id="use-cases" className="use-case background-dark">
@@ -104,16 +17,6 @@ function Usecases() {
         </div>
         <div id="healthcare">
           <div className="canvas-container">
-            <Canvas
-              style={{ width: "100%", height: "100%" }}
-              pixelratio={window.devicePixelRatio}
-              camera={{ position: [0, 0, 0.4] }}
-            >
-              <ambientLight intensity={0.5} />
-              <pointLight position={[10, 10, 10]} intensity={1} />
-              <RotatingGroup curves={biologyCurves} trigger="#dentascan" fromYRotation={Math.PI * 3} initialZRotation={Math.PI / 3.2}/>
-              <OrbitControls enableZoom={false} />
-            </Canvas>
           </div>
           <div id="dentascan">
             <h4 className="branch-text">Healthcare</h4>
@@ -139,7 +42,7 @@ function Usecases() {
         </div>
       </div>
       <div className="use-case background-light">
-        <img id="mic-icon" src={Mic} ref={micRef}></img>
+        <img id="mic-icon" src={Mic}></img>
         <div id="orion">
           <h4 className="branch-text"></h4>
           <div className="card-container">
@@ -171,14 +74,13 @@ function Usecases() {
             width="400"
             height="400"
             fill="none"
-            ref={plusRef}
           >
             <path
               d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"
               style={{ strokeWidth:'0.2', stroke: 'var(--blue)' }}
             />
           </svg>
-          <div id="minus" ref={minusRef}></div>
+          <div id="minus"></div>
         </div>
         <div id="speakpeak">
           <div className="card-container">
@@ -209,7 +111,6 @@ function Usecases() {
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
-          ref={sendRef}
         >
           <path
             d="M5.44,4.15l14.65,7a1,1,0,0,1,0,1.8l-14.65,7A1,1,0,0,1,4.1,18.54l2.72-6.13a1.06,1.06,0,0,0,0-.82L4.1,5.46A1,1,0,0,1,5.44,4.15ZM7,12h4"
@@ -285,7 +186,7 @@ function Usecases() {
           </div>
         </div>
         <div id="emailMaven">
-          <svg id="email-icon" ref={emailRef} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg id="email-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M20,19H4a1,1,0,0,1-1-1V6A1,1,0,0,1,4,5H20a1,1,0,0,1,1,1V18A1,1,0,0,1,20,19ZM3.68,5.45l7.7,6.06a1,1,0,0,0,1.24,0l7.7-6.06"
               style={{ fill: "none", stroke: "var(--dark-600)", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: ".05" }}

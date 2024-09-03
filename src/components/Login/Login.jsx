@@ -31,7 +31,7 @@ const Login = () => {
                 <h1>Login</h1>
                 <p className="login-infotext additional-information-wrapper">The access to the requested ressource is restricted and requires authentication by password.</p>
                 <div id="password-wrapper">
-                    <label class="input-wrapper">
+                    <label className="input-wrapper">
                         <span>Password</span>
                         <input
                             type="password"
@@ -44,7 +44,7 @@ const Login = () => {
                         {error && (
                             <>
                                 <ErrorIcon strokeColor='red' height={10} width={10} strokeWidth={2}></ErrorIcon>
-                                <p class="error-text">{error}</p>
+                                <p className="error-text">{error}</p>
                             </>
                         )}
                     </div>

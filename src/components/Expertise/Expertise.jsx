@@ -3,35 +3,10 @@ import "./Expertise.css";
 import PlugIcon from "../../assets/icons/Plug-Icon";
 import BatteryIcon from "../../assets/icons/Battery-Icon";
 import DataIcon from "../../assets/icons/Data-Icon";
-import React, { useEffect } from 'react';
+import React from 'react';
 
-import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger) 
 
 export default function Expertise(){
-
-  useEffect(() => {
-    const cards = document.querySelectorAll("#expertise .card");
-    
-    cards.forEach((card, index) => {
-      gsap.fromTo(card, 
-        { opacity: 0, y: 20 }, 
-        { 
-          y: 0,
-          opacity: 1, 
-          duration: 1, 
-          delay: index * .6,
-          scrollTrigger: {
-            trigger: "#card-wrapper",
-            start: 'top bottom',
-            end: '+=500px',
-          }
-        }
-      );
-    });
-  }, []);
-
   return (
     <div id="expertise">
       <h2 className="headline-h2">Our expertise:</h2>

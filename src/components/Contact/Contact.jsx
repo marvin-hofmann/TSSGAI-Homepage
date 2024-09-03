@@ -7,7 +7,7 @@ export default function Contact(){
         <h2 className="headline-h2">Location & Contact:</h2>
         <p className="headline-subtext margin-y-2rem">Visit our office and get in touch with us for any inquiries or support. Our location is easy to reach, and our team is ready to assist you. We look forward to connecting with you!</p>
         <div id="contact-options-wrapper">
-          <iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.731571335806!2d103.96593511064954!3d1.3373206616101367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da17ed1088fda1%3A0xb246460edac107b6!2sT-Systems%20Singapore!5e0!3m2!1sde!2ssg!4v1722232258201!5m2!1sde!2ssg" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          {/* <iframe id="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.731571335806!2d103.96593511064954!3d1.3373206616101367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da17ed1088fda1%3A0xb246460edac107b6!2sT-Systems%20Singapore!5e0!3m2!1sde!2ssg!4v1722232258201!5m2!1sde!2ssg" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe> */}
           <div id="contact-details">
             <div className="single-details">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path style={{fill: "white", stroke: "var(--dark-500)"}} d="M20.19,13a10,10,0,0,1-3.43-.91,2,2,0,0,0-2.56.83l-.51.85a12.69,12.69,0,0,1-3.44-3.45l.86-.49a2,2,0,0,0,.83-2.56A10,10,0,0,1,11,3.81,2,2,0,0,0,9,2H5.13A3,3,0,0,0,2.86,3a3.13,3.13,0,0,0-.71,2.43A19,19,0,0,0,18.58,21.85a3,3,0,0,0,.42,0,3,3,0,0,0,2-.73,3,3,0,0,0,1-2.26V15A2,2,0,0,0,20.19,13Z"></path></svg>              
