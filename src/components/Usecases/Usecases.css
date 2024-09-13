@@ -98,9 +98,10 @@
 }
 
 #dentascan .use-case-image > img{
+    filter: invert(.898);
     width: 100%;
-    object-fit: cover;
-    filter: invert(.898);    
+    object-fit: contain;
+    height: 100px;  
 }
 
 #dentascan .use-case-image::after{
@@ -194,6 +195,7 @@
 #orion .use-case-image > img{
     width: 100%;
     object-fit: contain;
+    height: 100px;
 }
 
 #orion .use-case-image{
@@ -296,8 +298,8 @@
 
 #speakpeak .use-case-image > img{
     width: 100%;
-    object-fit: cover;
-    border-radius: 2px;
+    object-fit: contain;
+    height: 100px;
 }
 
 #speakpeak .use-case-image{
