@@ -2,15 +2,15 @@ import React from 'react';
 
 import './Home.css';
 
-import Sidebar from '../components/Sidebar/Sidebar';
-import Arrow from "./../assets/icons/arrow-right.svg";
-import Contact from '../components/Contact/Contact';
-import Expertise from '../components/Expertise/Expertise';
-import Usecases from '../components/Usecases/Usecases';
+import Sidebar from './components/Sidebar/Sidebar';
+import Arrow from "./assets/icons/arrow-right.svg";
+import Contact from './components/Contact/Contact';
+import Expertise from './components/Expertise/Expertise';
+import Usecases from './components/Usecases/Usecases';
 
-import Clients from '../components/Clients/Clients';
-import Footer from '../components/Footer/Footer';
-import Ressources from '../components/Ressources/Ressources';
+import Clients from './components/Clients/Clients';
+import Footer from './components/Footer/Footer';
+import Ressources from './components/Ressources/Ressources';
 
 function App() {
   return (
